@@ -133,6 +133,33 @@ export default function Command() {
     revalidate();
   };
 
+  const viewActions = (
+    <ActionPanel.Section title="View">
+      <ActionPanel.Submenu title="Filter by Website" icon={Icon.Globe}>
+        <Action title="All Websites" icon={Icon.Globe} onAction={() => setWebsiteId(ALL_WEBSITES)} />
+        {websites?.map((website) => (
+          <Action
+            key={website.id}
+            title={websiteName(website)}
+            icon={Icon.Globe}
+            onAction={() => setWebsiteId(website.id)}
+          />
+        ))}
+      </ActionPanel.Submenu>
+      <Action
+        title={sort === "RELEVANCE" ? "Sort by Newest" : "Sort by Relevance"}
+        icon={Icon.ArrowUp}
+        onAction={() => setSort(sort === "RELEVANCE" ? "RECENT" : "RELEVANCE")}
+      />
+      <Action
+        title="Refresh"
+        icon={Icon.ArrowClockwise}
+        shortcut={Keyboard.Shortcut.Common.Refresh}
+        onAction={revalidate}
+      />
+    </ActionPanel.Section>
+  );
+
   return (
     <List
       isLoading={isLoading}
@@ -153,7 +180,11 @@ export default function Command() {
       {error && !data?.length ? (
         <LoadErrorView title="Could Not Load Mentions" error={error} onRetry={revalidate} />
       ) : (
-        <List.EmptyView icon={Icon.SpeechBubble} title="No Mentions Found" />
+        <List.EmptyView
+          icon={Icon.SpeechBubble}
+          title="No Mentions Found"
+          actions={<ActionPanel>{viewActions}</ActionPanel>}
+        />
       )}
       {data?.map((mention) => (
         <List.Item
@@ -198,30 +229,7 @@ export default function Command() {
                   />
                 ))}
               </ActionPanel.Section>
-              <ActionPanel.Section title="View">
-                <ActionPanel.Submenu title="Filter by Website" icon={Icon.Globe}>
-                  <Action title="All Websites" icon={Icon.Globe} onAction={() => setWebsiteId(ALL_WEBSITES)} />
-                  {websites?.map((website) => (
-                    <Action
-                      key={website.id}
-                      title={websiteName(website)}
-                      icon={Icon.Globe}
-                      onAction={() => setWebsiteId(website.id)}
-                    />
-                  ))}
-                </ActionPanel.Submenu>
-                <Action
-                  title={sort === "RELEVANCE" ? "Sort by Newest" : "Sort by Relevance"}
-                  icon={Icon.ArrowUp}
-                  onAction={() => setSort(sort === "RELEVANCE" ? "RECENT" : "RELEVANCE")}
-                />
-                <Action
-                  title="Refresh"
-                  icon={Icon.ArrowClockwise}
-                  shortcut={Keyboard.Shortcut.Common.Refresh}
-                  onAction={revalidate}
-                />
-              </ActionPanel.Section>
+              {viewActions}
             </ActionPanel>
           }
         />
