@@ -1,0 +1,21 @@
+package.json
+  s_503a074ff52fa7::t_82ffc165ae399c 5
+src/search-mentions.tsx
+  s_503a074ff52fa7::t_d8bd63aa6d1498 136-162,183-187,232
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97c5c8778e1c05820cedc452d1e68becd870282a",
+  "prompts": {},
+  "sessions": {
+    "s_503a074ff52fa7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ccc558f7-ac40-497a-a316-9abb6e2d85f8",
+        "model": "unknown"
+      },
+      "human_author": "Taras Shynkarenko <taras.shinkarenko@gmail.com>"
+    }
+  }
+}
