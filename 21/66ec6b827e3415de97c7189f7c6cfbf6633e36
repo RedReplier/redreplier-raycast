@@ -1,0 +1,37 @@
+package.json
+  s_82f1560ed1eab1::t_ff79cf4dda938d 5,8-11,13-15
+src/components/add-keywords-form.tsx
+  s_82f1560ed1eab1::t_2f13ed115d03e1 66
+src/components/load-error-view.tsx
+  s_82f1560ed1eab1::t_d647d9f819a5df 1-23
+src/lib/use-websites.ts
+  s_82f1560ed1eab1::t_cf09a2dd15019f 11
+src/search-mentions.tsx
+  s_82f1560ed1eab1::t_49f5264ed5e40d 2,4,6,80-86,95,109,141-143,153-157,186-188,203,205-210
+src/search-websites.tsx
+  s_503a074ff52fa7::t_5083513c4a6891 3,25,53-61,72-84,98,102-115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2166ec6b827e3415de97c7189f7c6cfbf6633e36",
+  "prompts": {},
+  "sessions": {
+    "s_503a074ff52fa7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ccc558f7-ac40-497a-a316-9abb6e2d85f8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Taras Shynkarenko <taras.shinkarenko@gmail.com>"
+    },
+    "s_82f1560ed1eab1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfa6ead2-d55a-4d15-8158-92f95260dbf3",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Taras Shynkarenko <taras.shinkarenko@gmail.com>"
+    }
+  }
+}
